@@ -1,0 +1,41 @@
+// Payment.java
+public interface Payment {
+    void pay(double amount);
+}
+
+// CreditCardPayment.java
+public class CreditCardPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid $" + amount + " using Credit Card.");
+    }
+}
+
+// PayPalPayment.java
+public class PayPalPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid $" + amount + " using PayPal.");
+    }
+}
+
+// CashPayment.java
+public class CashPayment implements Payment {
+    @Override
+    public void pay(double amount) {
+        System.out.println("Paid $" + amount + " in Cash.");
+    }
+}
+
+// PaymentSystemDemo.java
+public class PaymentSystemDemo {
+    public static void main(String[] args) {
+        Payment credit = new CreditCardPayment();
+        Payment paypal = new PayPalPayment();
+        Payment cash = new CashPayment();
+
+        credit.pay(100.0);
+        paypal.pay(50.0);
+        cash.pay(20.0);
+    }
+}
