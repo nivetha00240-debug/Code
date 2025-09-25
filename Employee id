@@ -1,0 +1,24 @@
+
+package employee_package;
+
+public class Employee {
+    public String name;
+    private double salary;
+    protected String department;
+    int employeeId;
+
+    public Employee(String name, double salary, String department, int employeeId) {
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+        this.employeeId = employeeId;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+}
