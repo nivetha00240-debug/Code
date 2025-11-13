@@ -1,4 +1,3 @@
-In the following program, which catch block will execute and why?[K2][CO3]
 public class Test1 {
 public static void main(String[] args) {
 try {
@@ -14,3 +13,21 @@ System.out.println("General exception!");
 }
 }
 }
+The catch block that will execute is:
+ ArrayIndexOutOfBoundsException
+In the line:
+int result = arr[3] / 0;
+Two errors seem possible:
+1. arr[3] → This is invalid because the array has only indices 0, 1, 2.
+So this immediately causes an
+ArrayIndexOutOfBoundsException.
+2. / 0 → Division by zero
+(ArithmeticException), but this is never reached because the program already crashed at arr[3].
+
+
+Therefore:
+
+✔ The first exception that occurs is ArrayIndexOutOfBoundsException.
+✔ So the second catch block executes:
+
+Array index out of range!
